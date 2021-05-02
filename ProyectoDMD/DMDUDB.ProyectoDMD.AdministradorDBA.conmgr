@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DMDUDB.ProyectoDMD.AdministradorDBA"
+  DTS:DTSID="{CFF9897E-95E2-4528-9911-0553FC9CC947}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=DMDUDB;User ID=AdministradorDBA;Initial Catalog=ProyectoDMD;Application Name=SSIS-ProyectoDMD-{CFF9897E-95E2-4528-9911-0553FC9CC947}DMDUDB.ProyectoDMD.AdministradorDBA;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAACYEWmYw3oESRdNyo30o2NQAAAAACAAAAAAAQZgAAAAEAACAAAAC4BJBmq12d/+ob2ECjvVGQhMKKGzD3NYVsUrdZtyWCJgAAAAAOgAAAAAIAACAAAAD2vAztoajIDh3anALIs35wsxk8sEqHHnlMbyoihtbuoYAAAACz42GQVYRyEE6eh25vE1AZqGBildy2eZ37FNvpAFddOVt1Hy/f6uAmfeFjWMz3rt68ovn+7DQblUXUQKr5+mygSqZT8baLRqVFYs8CDR4Ct5FMIbdCWjIBOB3y9bvUDPufP9NFQD4T5ISVa/cZHrDnFdIPJYG+p9KZzRx3BKhHXUAAAAAH0t2wHdtSGFPb46mxrn4A+Cl+bvb8cS7Yq6eMT3T8JN4OFFjkpD/iaBRgnHIAfQEpQbwE0deNCyfDQgz+Fnng</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

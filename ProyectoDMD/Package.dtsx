@@ -1,0 +1,1604 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/29/2021 10:16:18 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DMDUDB"
+  DTS:CreatorName="DMDUDB\moise"
+  DTS:DTSID="{A9954BD0-467B-4089-AA8B-7D77ECE4A1F7}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.157"
+  DTS:LocaleID="21514"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{DA2DB7BA-BD48-4D2D-9407-1F1403DDEF33}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Administrador de conexiones de archivos planos]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{7809E90A-0CA3-496E-84DE-5CFB0E7298B8}"
+      DTS:ObjectName="Administrador de conexiones de archivos planos">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="21514"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\moise\Documents\UDBIngenieria\Materias\Ciclo 03\DMD\Unidad 4\Avance1-Proyecto\Esquelas_18102018.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ves Nro Esquela"
+              DTS:DTSID="{4F31099F-5F26-411A-8842-A3DF7743C2C7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ves Fecha"
+              DTS:DTSID="{19101783-CFDB-4C3A-BB61-F9337936FFEF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ves Tipo Falta"
+              DTS:DTSID="{D4C3ADD6-C916-4D3D-9551-D1AB2FE5E994}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ves Falta Descripcion"
+              DTS:DTSID="{3774258A-76AB-4DF2-9C24-61B129189E48}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ves Departamento"
+              DTS:DTSID="{D8DE57E5-F0C9-4240-9269-EE10AE20003F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ves Estado"
+              DTS:DTSID="{3CF0FE75-35A3-4A6C-9D50-E63E394D92A8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ves Estado Descripcion"
+              DTS:DTSID="{FC07E34A-DF51-4EA8-8640-7757D6DFF10D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ves Valor"
+              DTS:DTSID="{D1CCED40-E641-457D-AD48-CEEE1B8A5BA4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ves Interes"
+              DTS:DTSID="{96059462-8FF3-438E-BC2A-A0A076D8A0E3}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Cargar Datos Esquela"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{7C8D68C9-9CED-4830-A3EE-7F72543C2AD5}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Cargar Datos Esquela"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Cargar Datos Esquela\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Cargar Datos Esquela\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cargar Datos Esquela\Data Conversion.Inputs[Data Conversion Input].Columns[Ves Valor]"
+                      cachedDataType="r4"
+                      cachedName="Ves Valor"
+                      lineageId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Valor]" />
+                    <inputColumn
+                      refId="Package\Cargar Datos Esquela\Data Conversion.Inputs[Data Conversion Input].Columns[Ves Interes]"
+                      cachedDataType="r4"
+                      cachedName="Ves Interes"
+                      lineageId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Interes]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Cargar Datos Esquela\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Cargar Datos Esquela\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar Datos Esquela\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de Ves Valor]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Cargar Datos Esquela\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de Ves Valor]"
+                      name="Copia de Ves Valor"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Valor]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar Datos Esquela\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de Ves Interes]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Cargar Datos Esquela\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de Ves Interes]"
+                      name="Copia de Ves Interes"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Interes]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Cargar Datos Esquela\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Cargar Datos Esquela\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar Datos Esquela\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cargar Datos Esquela\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar Datos Esquela\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cargar Datos Esquela\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cargar Datos Esquela\Destino de ADO NET"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="Destino de ADO NET"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Esquela2"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cargar Datos Esquela\Destino de ADO NET.Connections[IDbConnection]"
+                  connectionManagerID="{CFF9897E-95E2-4528-9911-0553FC9CC947}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DMDUDB.ProyectoDMD.AdministradorDBA]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Ves Nro Esquela]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Ves Nro Esquela"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Codigo]"
+                      lineageId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Nro Esquela]" />
+                    <inputColumn
+                      refId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Ves Fecha]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Ves Fecha"
+                      externalMetadataColumnId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[fecha]"
+                      lineageId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Fecha]" />
+                    <inputColumn
+                      refId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Ves Falta Descripcion]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Ves Falta Descripcion"
+                      externalMetadataColumnId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Descripcion]"
+                      lineageId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Falta Descripcion]" />
+                    <inputColumn
+                      refId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Ves Departamento]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Ves Departamento"
+                      externalMetadataColumnId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Departamento]"
+                      lineageId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Departamento]" />
+                    <inputColumn
+                      refId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Copia de Ves Valor]"
+                      cachedDataType="r4"
+                      cachedName="Copia de Ves Valor"
+                      externalMetadataColumnId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Valor]"
+                      lineageId="Package\Cargar Datos Esquela\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de Ves Valor]" />
+                    <inputColumn
+                      refId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Copia de Ves Interes]"
+                      cachedDataType="r4"
+                      cachedName="Copia de Ves Interes"
+                      externalMetadataColumnId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Interes]"
+                      lineageId="Package\Cargar Datos Esquela\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de Ves Interes]" />
+                    <inputColumn
+                      refId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Ves Tipo Falta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Ves Tipo Falta"
+                      externalMetadataColumnId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[tipoFalta]"
+                      lineageId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Tipo Falta]" />
+                    <inputColumn
+                      refId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Ves Estado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Ves Estado"
+                      externalMetadataColumnId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Estado]"
+                      lineageId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Estado]" />
+                    <inputColumn
+                      refId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Ves Estado Descripcion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Ves Estado Descripcion"
+                      externalMetadataColumnId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[EstadoDescripcion]"
+                      lineageId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Estado Descripcion]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Codigo]"
+                      dataType="wstr"
+                      length="200"
+                      name="Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[fecha]"
+                      dataType="wstr"
+                      length="255"
+                      name="fecha" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Descripcion]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="Descripcion" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Departamento]"
+                      dataType="wstr"
+                      length="255"
+                      name="Departamento" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Valor]"
+                      dataType="numeric"
+                      name="Valor"
+                      precision="12"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Interes]"
+                      dataType="numeric"
+                      name="Interes"
+                      precision="12"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[tipoFalta]"
+                      dataType="wstr"
+                      length="255"
+                      name="tipoFalta" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[Estado]"
+                      dataType="wstr"
+                      length="255"
+                      name="Estado" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[EstadoDescripcion]"
+                      dataType="wstr"
+                      length="255"
+                      name="EstadoDescripcion" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Cargar Datos Esquela\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar Datos Esquela\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cargar Datos Esquela\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar Datos Esquela\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cargar Datos Esquela\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cargar Datos Esquela\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="21514"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cargar Datos Esquela\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones de archivos planos]"
+                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones de archivos planos]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Nro Esquela]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Ves Nro Esquela]"
+                      length="50"
+                      lineageId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Nro Esquela]"
+                      name="Ves Nro Esquela"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Fecha]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Ves Fecha]"
+                      length="50"
+                      lineageId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Fecha]"
+                      name="Ves Fecha"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Tipo Falta]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Ves Tipo Falta]"
+                      length="50"
+                      lineageId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Tipo Falta]"
+                      name="Ves Tipo Falta"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Departamento]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Ves Departamento]"
+                      length="50"
+                      lineageId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Departamento]"
+                      name="Ves Departamento"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Estado]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Ves Estado]"
+                      length="50"
+                      lineageId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Estado]"
+                      name="Ves Estado"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Estado Descripcion]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Ves Estado Descripcion]"
+                      length="50"
+                      lineageId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Estado Descripcion]"
+                      name="Ves Estado Descripcion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Valor]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Ves Valor]"
+                      lineageId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Valor]"
+                      name="Ves Valor"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Interes]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Ves Interes]"
+                      lineageId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Interes]"
+                      name="Ves Interes"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Falta Descripcion]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Ves Falta Descripcion]"
+                      lineageId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Falta Descripcion]"
+                      name="Ves Falta Descripcion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Ves Nro Esquela]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Ves Nro Esquela" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Ves Fecha]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Ves Fecha" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Ves Tipo Falta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Ves Tipo Falta" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Ves Departamento]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Ves Departamento" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Ves Estado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Ves Estado" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Ves Estado Descripcion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Ves Estado Descripcion" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Ves Valor]"
+                      dataType="r4"
+                      name="Ves Valor" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Ves Interes]"
+                      dataType="r4"
+                      name="Ves Interes" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Ves Falta Descripcion]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Ves Falta Descripcion" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cargar Datos Esquela\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Cargar Datos Esquela\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cargar Datos Esquela\Sort.Inputs[Sort Input].Columns[Ves Nro Esquela]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Ves Nro Esquela"
+                      lineageId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Nro Esquela]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar Datos Esquela\Sort.Inputs[Sort Input].Columns[Ves Fecha]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Ves Fecha"
+                      lineageId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Fecha]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar Datos Esquela\Sort.Inputs[Sort Input].Columns[Ves Tipo Falta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Ves Tipo Falta"
+                      lineageId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Tipo Falta]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar Datos Esquela\Sort.Inputs[Sort Input].Columns[Ves Departamento]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Ves Departamento"
+                      lineageId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Departamento]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar Datos Esquela\Sort.Inputs[Sort Input].Columns[Ves Estado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Ves Estado"
+                      lineageId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Estado]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar Datos Esquela\Sort.Inputs[Sort Input].Columns[Ves Estado Descripcion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Ves Estado Descripcion"
+                      lineageId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Estado Descripcion]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar Datos Esquela\Sort.Inputs[Sort Input].Columns[Ves Valor]"
+                      cachedDataType="r4"
+                      cachedName="Ves Valor"
+                      lineageId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Valor]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar Datos Esquela\Sort.Inputs[Sort Input].Columns[Ves Interes]"
+                      cachedDataType="r4"
+                      cachedName="Ves Interes"
+                      lineageId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Interes]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cargar Datos Esquela\Sort.Inputs[Sort Input].Columns[Ves Falta Descripcion]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Ves Falta Descripcion"
+                      lineageId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Falta Descripcion]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Nro Esquela]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Nro Esquela]"
+                      name="Ves Nro Esquela"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Nro Esquela]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Fecha]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Fecha]"
+                      name="Ves Fecha">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Fecha]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Tipo Falta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Tipo Falta]"
+                      name="Ves Tipo Falta">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Tipo Falta]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Departamento]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Departamento]"
+                      name="Ves Departamento">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Departamento]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Estado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Estado]"
+                      name="Ves Estado">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Estado]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Estado Descripcion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Estado Descripcion]"
+                      name="Ves Estado Descripcion">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Estado Descripcion]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Valor]"
+                      dataType="r4"
+                      lineageId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Valor]"
+                      name="Ves Valor">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Valor]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Interes]"
+                      dataType="r4"
+                      lineageId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Interes]"
+                      name="Ves Interes">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Interes]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Falta Descripcion]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output].Columns[Ves Falta Descripcion]"
+                      name="Ves Falta Descripcion">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output].Columns[Ves Falta Descripcion]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Cargar Datos Esquela.Paths[Data Conversion Output]"
+              endId="Package\Cargar Datos Esquela\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+              name="Data Conversion Output"
+              startId="Package\Cargar Datos Esquela\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Cargar Datos Esquela.Paths[Flat File Source Output]"
+              endId="Package\Cargar Datos Esquela\Sort.Inputs[Sort Input]"
+              name="Flat File Source Output"
+              startId="Package\Cargar Datos Esquela\Flat File Source.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Cargar Datos Esquela.Paths[Sort Output]"
+              endId="Package\Cargar Datos Esquela\Data Conversion.Inputs[Data Conversion Input]"
+              name="Sort Output"
+              startId="Package\Cargar Datos Esquela\Sort.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Descarte de Datos"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{FD00B7B5-31DA-4C42-8DB8-37946C5CFD39}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Descarte de Datos"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{CFF9897E-95E2-4528-9911-0553FC9CC947}"
+          SQLTask:SqlStatementSource="delete from Esquela2 where Codigo is null or Codigo='';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Limpiar Base"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{DF4DD09B-AB7F-4ED3-BA9B-D50850990D7F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Limpiar Base"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{CFF9897E-95E2-4528-9911-0553FC9CC947}"
+          SQLTask:SqlStatementSource="delete from Esquela;&#xA;delete from  tiempo;&#xA;delete from Estado;&#xA;delete from TipoFalta;&#xA;delete from Esquela2;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\LLenar Tabla Estado"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{21AACF58-5C6E-4C4C-BAD8-B30DE2532430}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="LLenar Tabla Estado"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{CFF9897E-95E2-4528-9911-0553FC9CC947}"
+          SQLTask:SqlStatementSource="insert into   Estado( Codigo, Descripcion)&#xA;select  distinct Estado, EstadoDescripcion from &#xA;Esquela2&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Llenar tabla Tiempo"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{C9F2CA01-7063-458F-B0E7-E3122A4A25C7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Llenar tabla Tiempo"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{CFF9897E-95E2-4528-9911-0553FC9CC947}"
+          SQLTask:SqlStatementSource="insert into Tiempo(fecha,año,Mes,Dia)&#xA;select  Distinct REPLACE(fecha,'/','-'),&#xA;case  &#xA;WHEN len( fecha)=8 THEN SUBSTRING(fecha, 5, 100)&#xA;WHEN len( fecha)=10 THEN SUBSTRING(fecha, 7, 100)&#xA;WHEN len( fecha)=9 THEN SUBSTRING(fecha, 6, 100)&#xA;ELSE ''&#xA;END AS 'Año',&#xA;case  &#xA;WHEN len( fecha)=8 THEN '0'+SUBSTRING(fecha, 3, 1)&#xA;WHEN len( fecha)=10 THEN SUBSTRING(fecha, 4, 2)&#xA;WHEN len( fecha)=9 THEN '0'+SUBSTRING(fecha, 4, 1)&#xA;ELSE ''&#xA;END AS 'Mes',&#xA;case  &#xA;WHEN len( fecha)=8 THEN '0'+SUBSTRING(fecha, 1, 1)&#xA;WHEN len( fecha)=10 THEN SUBSTRING(fecha, 1, 2)&#xA;WHEN len( fecha)=9 THEN '0'+SUBSTRING(fecha, 1, 1)&#xA;ELSE ''&#xA;END AS 'Dia'&#xA;FROM Esquela2 &#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Llenar Tabla TipoFalta"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{08720797-7F48-4E44-9892-8749A9E6FA1C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Llenar Tabla TipoFalta"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{CFF9897E-95E2-4528-9911-0553FC9CC947}"
+          SQLTask:SqlStatementSource="insert into TipoFalta  (Descripcion)&#xA;select  distinct tipoFalta from Esquela2" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tarea Ejecutar SQL"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{A7452B58-394D-4FA4-B022-0643E80AE945}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Ejecutar SQL"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{CFF9897E-95E2-4528-9911-0553FC9CC947}"
+          SQLTask:SqlStatementSource="insert into Esquela(Codigo,idTiempo,Descripcion,Departamento,Valor,Interes,IdTipoEsquela,IdEstado)&#xA;select a.Codigo, b.ID as'Tiempo',a.Descripcion,a.Departamento,&#xA;a.Valor,a.Interes,c.ID,d.Codigo&#xA;from Esquela2 a inner join Tiempo b on REPLACE(a.fecha,'/','-') =b.fecha &#xA;&#x9;&#x9;&#x9;&#x9;inner join TipoFalta c on a.tipoFalta=c.Descripcion&#xA;&#x9;&#x9;&#x9;&#x9;inner join Estado d on a.EstadoDescripcion=d.Descripcion" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{9EFF48EE-3EA5-48B8-8DB0-92E99985A686}"
+      DTS:From="Package\Descarte de Datos"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\LLenar Tabla Estado" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{EC9CEC6A-8D8C-43EB-BBB4-1A3E2F306E66}"
+      DTS:From="Package\Llenar tabla Tiempo"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\Tarea Ejecutar SQL" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{46B187FE-E679-49A7-80E0-D6C1BD8E91EA}"
+      DTS:From="Package\LLenar Tabla Estado"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\Llenar Tabla TipoFalta" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{18914E83-511E-41C9-8E0F-3A6883DC9450}"
+      DTS:From="Package\Llenar Tabla TipoFalta"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 3"
+      DTS:To="Package\Llenar tabla Tiempo" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{DB78E08B-5975-4840-9D11-CD69B7B4799B}"
+      DTS:From="Package\Limpiar Base"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 4"
+      DTS:To="Package\Cargar Datos Esquela" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{A1535755-505F-4019-9A80-9E9540A6DC21}"
+      DTS:From="Package\Cargar Datos Esquela"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 5"
+      DTS:To="Package\Descarte de Datos" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Cargar Datos Esquela"
+          TopLeft="126,153" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Descarte de Datos"
+          TopLeft="342,82" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Limpiar Base"
+          TopLeft="134,28" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\LLenar Tabla Estado"
+          TopLeft="460,166" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Llenar tabla Tiempo"
+          TopLeft="909,162" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Llenar Tabla TipoFalta"
+          TopLeft="666,169" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Tarea Ejecutar SQL"
+          TopLeft="750,241" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="450.666666666667,124">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="96.8333333333334,42"
+              Start="0,0"
+              End="96.8333333333334,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.0420168067227" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.0420168067227"
+                    Point2="0,17.0420168067227"
+                    Point3="4,17.0420168067227" />
+                  <mssgle:LineSegment
+                    End="92.8333333333334,17.0420168067227" />
+                  <mssgle:CubicBezierSegment
+                    Point1="92.8333333333334,17.0420168067227"
+                    Point2="96.8333333333334,17.0420168067227"
+                    Point3="96.8333333333334,21.0420168067227" />
+                  <mssgle:LineSegment
+                    End="96.8333333333334,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="995,204">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-160,37"
+              Start="0,0"
+              End="-160,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5"
+                    Point2="0,18.5"
+                    Point3="-4,18.5" />
+                  <mssgle:LineSegment
+                    End="-156,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-156,18.5"
+                    Point2="-160,18.5"
+                    Point3="-160,22.5" />
+                  <mssgle:LineSegment
+                    End="-160,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="635,188.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="31,0"
+              Start="0,0"
+              End="23.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="23.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 3]"
+          TopLeft="849,186.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="60,0"
+              Start="0,0"
+              End="52.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="52.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 4]"
+          TopLeft="203.5,70">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-16.1666666666667,83"
+              Start="0,0"
+              End="-16.1666666666667,75.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.3612334801762" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,45.3612334801762"
+                    Point2="0,49.3612334801762"
+                    Point3="-4,49.3612334801762" />
+                  <mssgle:LineSegment
+                    End="-12.1666666666667,49.3612334801762" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-12.1666666666667,49.3612334801762"
+                    Point2="-16.1666666666667,49.3612334801762"
+                    Point3="-16.1666666666667,53.3612334801762" />
+                  <mssgle:LineSegment
+                    End="-16.1666666666667,75.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 5]"
+          TopLeft="244.666666666667,153">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="153.666666666667,-29"
+              Start="0,0"
+              End="153.666666666667,-21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-10.4856860809477" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-10.4856860809477"
+                    Point2="0,-14.4856860809477"
+                    Point3="4,-14.4856860809477" />
+                  <mssgle:LineSegment
+                    End="149.666666666667,-14.4856860809477" />
+                  <mssgle:CubicBezierSegment
+                    Point1="149.666666666667,-14.4856860809477"
+                    Point2="153.666666666667,-14.4856860809477"
+                    Point3="153.666666666667,-18.4856860809477" />
+                  <mssgle:LineSegment
+                    End="153.666666666667,-21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Cargar Datos Esquela">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Cargar Datos Esquela\Sort"
+          TopLeft="605,61" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Cargar Datos Esquela\Flat File Source"
+          TopLeft="267,19" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Cargar Datos Esquela\Destino de ADO NET"
+          TopLeft="85,164" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Cargar Datos Esquela\Data Conversion"
+          TopLeft="512,179" />
+        <EdgeLayout
+          Id="Package\Cargar Datos Esquela.Paths[Sort Output]"
+          TopLeft="654,103">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-64,76"
+              Start="0,0"
+              End="-64,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34"
+                    Point2="0,38"
+                    Point3="-4,38" />
+                  <mssgle:LineSegment
+                    End="-60,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-60,38"
+                    Point2="-64,38"
+                    Point3="-64,42" />
+                  <mssgle:LineSegment
+                    End="-64,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cargar Datos Esquela.Paths[Flat File Source Output]"
+          TopLeft="418,40">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="187,42"
+              Start="0,0"
+              End="179.5,42">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="89.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="89.5,0"
+                    Point2="93.5,0"
+                    Point3="93.5,4" />
+                  <mssgle:LineSegment
+                    End="93.5,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="93.5,38"
+                    Point2="93.5,42"
+                    Point3="97.5,42" />
+                  <mssgle:LineSegment
+                    End="179.5,42" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cargar Datos Esquela.Paths[Data Conversion Output]"
+          TopLeft="512,200">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-251,-15"
+              Start="0,0"
+              End="-243.5,-15">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-121.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-121.5,0"
+                    Point2="-125.5,0"
+                    Point3="-125.5,-4" />
+                  <mssgle:LineSegment
+                    End="-125.5,-11" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-125.5,-11"
+                    Point2="-125.5,-15"
+                    Point3="-129.5,-15" />
+                  <mssgle:LineSegment
+                    End="-243.5,-15" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar Datos Esquela\Destino de ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
