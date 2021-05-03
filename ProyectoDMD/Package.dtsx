@@ -11,8 +11,8 @@
   DTS:LocaleID="21514"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="54"
-  DTS:VersionGUID="{DA2DB7BA-BD48-4D2D-9407-1F1403DDEF33}">
+  DTS:VersionBuild="55"
+  DTS:VersionGUID="{E19E17E1-D451-443D-B101-B76C3911CBDB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1085,6 +1085,23 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Datos Esquela"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{A7452B58-394D-4FA4-B022-0643E80AE945}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Datos Esquela"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{CFF9897E-95E2-4528-9911-0553FC9CC947}"
+          SQLTask:SqlStatementSource="insert into Esquela(Codigo,idTiempo,Descripcion,Departamento,Valor,Interes,IdTipoEsquela,IdEstado)&#xA;select a.Codigo, b.ID as'Tiempo',a.Descripcion,e.id,&#xA;a.Valor,a.Interes,c.ID,d.Codigo&#xA;from Esquela2 a inner join Tiempo b on REPLACE(a.fecha,'/','-') =b.fecha &#xA;&#x9;&#x9;&#x9;&#x9;inner join TipoFalta c on a.tipoFalta=c.Descripcion&#xA;&#x9;&#x9;&#x9;&#x9;inner join Estado d on a.EstadoDescripcion=d.Descripcion&#xA;&#x9;&#x9;&#x9;&#x9;inner join Departamento e on a.Departamento=e.Descripcion" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Descarte de Datos"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
@@ -1115,7 +1132,24 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{CFF9897E-95E2-4528-9911-0553FC9CC947}"
-          SQLTask:SqlStatementSource="delete from Esquela;&#xA;delete from  tiempo;&#xA;delete from Estado;&#xA;delete from TipoFalta;&#xA;delete from Esquela2;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="delete from Esquela;&#xA;delete from  tiempo;&#xA;delete from Estado;&#xA;delete from TipoFalta;&#xA;delete from Departamento;&#xA;delete from Esquela2;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Llenar tabla Departamento"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{C65027CF-4419-4F50-95BC-D7D9321A362E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Llenar tabla Departamento"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{CFF9897E-95E2-4528-9911-0553FC9CC947}"
+          SQLTask:SqlStatementSource="insert into   Departamento(Descripcion)&#xA;select  distinct    Departamento from &#xA;Esquela2" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1169,23 +1203,6 @@
           SQLTask:SqlStatementSource="insert into TipoFalta  (Descripcion)&#xA;select  distinct tipoFalta from Esquela2" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Tarea Ejecutar SQL"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{A7452B58-394D-4FA4-B022-0643E80AE945}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Tarea Ejecutar SQL"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{CFF9897E-95E2-4528-9911-0553FC9CC947}"
-          SQLTask:SqlStatementSource="insert into Esquela(Codigo,idTiempo,Descripcion,Departamento,Valor,Interes,IdTipoEsquela,IdEstado)&#xA;select a.Codigo, b.ID as'Tiempo',a.Descripcion,a.Departamento,&#xA;a.Valor,a.Interes,c.ID,d.Codigo&#xA;from Esquela2 a inner join Tiempo b on REPLACE(a.fecha,'/','-') =b.fecha &#xA;&#x9;&#x9;&#x9;&#x9;inner join TipoFalta c on a.tipoFalta=c.Descripcion&#xA;&#x9;&#x9;&#x9;&#x9;inner join Estado d on a.EstadoDescripcion=d.Descripcion" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -1199,11 +1216,11 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
       DTS:CreationName=""
-      DTS:DTSID="{EC9CEC6A-8D8C-43EB-BBB4-1A3E2F306E66}"
+      DTS:DTSID="{DF661EFA-5BB2-40FF-9021-2225E489EAE4}"
       DTS:From="Package\Llenar tabla Tiempo"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 1"
-      DTS:To="Package\Tarea Ejecutar SQL" />
+      DTS:To="Package\Llenar tabla Departamento" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
       DTS:CreationName=""
@@ -1236,6 +1253,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 5"
       DTS:To="Package\Descarte de Datos" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{9E0102D1-CDB6-4BE4-99AC-D04E9B8C7CC4}"
+      DTS:From="Package\Llenar tabla Departamento"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 6"
+      DTS:To="Package\Datos Esquela" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
@@ -1274,8 +1299,8 @@
           Id="Package\Llenar Tabla TipoFalta"
           TopLeft="666,169" />
         <NodeLayout
-          Size="170,42"
-          Id="Package\Tarea Ejecutar SQL"
+          Size="146,42"
+          Id="Package\Datos Esquela"
           TopLeft="750,241" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
@@ -1303,40 +1328,6 @@
                     Point3="96.8333333333334,21.0420168067227" />
                   <mssgle:LineSegment
                     End="96.8333333333334,34.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Restricción 1]"
-          TopLeft="995,204">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-160,37"
-              Start="0,0"
-              End="-160,29.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.5"
-                    Point2="0,18.5"
-                    Point3="-4,18.5" />
-                  <mssgle:LineSegment
-                    End="-156,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-156,18.5"
-                    Point2="-160,18.5"
-                    Point3="-160,22.5" />
-                  <mssgle:LineSegment
-                    End="-160,29.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1449,6 +1440,66 @@
                     Point3="153.666666666667,-18.4856860809477" />
                   <mssgle:LineSegment
                     End="153.666666666667,-21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Llenar tabla Departamento"
+          TopLeft="1137,158" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="1081,181">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="56,0"
+              Start="0,0"
+              End="48.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="48.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 6]"
+          TopLeft="1239.5,200">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-416.5,41"
+              Start="0,0"
+              End="-416.5,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.5"
+                    Point2="0,20.5"
+                    Point3="-4,20.5" />
+                  <mssgle:LineSegment
+                    End="-412.5,20.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-412.5,20.5"
+                    Point2="-416.5,20.5"
+                    Point3="-416.5,24.5" />
+                  <mssgle:LineSegment
+                    End="-416.5,33.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

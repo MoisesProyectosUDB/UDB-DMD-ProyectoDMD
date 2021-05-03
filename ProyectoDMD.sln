@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Archivos", "Archivos", "{BB
 		..\..\Esquelas_18102018.csv = ..\..\Esquelas_18102018.csv
 	EndProjectSection
 EndProject
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "CuboOLAP", "CuboOLAP\CuboOLAP.dwproj", "{528AF7B2-F776-476B-92DF-ECC75A4E42CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
@@ -19,6 +21,9 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{3A544361-268C-40C8-94D5-F9C09729FD26}.Development|Default.ActiveCfg = Development
 		{3A544361-268C-40C8-94D5-F9C09729FD26}.Development|Default.Build.0 = Development
+		{528AF7B2-F776-476B-92DF-ECC75A4E42CE}.Development|Default.ActiveCfg = Development
+		{528AF7B2-F776-476B-92DF-ECC75A4E42CE}.Development|Default.Build.0 = Development
+		{528AF7B2-F776-476B-92DF-ECC75A4E42CE}.Development|Default.Deploy.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
