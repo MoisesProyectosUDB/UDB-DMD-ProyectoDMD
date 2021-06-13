@@ -1,4 +1,4 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="6098c4f0-ca20-40b5-a00b-9f7207d71952" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="a14b8112-15ab-4ce9-9d93-48fd66af39f1" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Esquela</ID>
   <Name>Esquela</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -42,58 +42,58 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="f9504faf-53c5-4c6b-b304-0fd04e4be0d9">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="aff9bfee-eaa5-4737-9ecb-415f5a970427">
     <DataSourceViewID>Proyecto DMD</DataSourceViewID>
   </Source>
-  <ErrorConfiguration dwd:design-time-name="bf277356-0d65-4974-abe7-1b2e2dab9e89">
+  <ErrorConfiguration dwd:design-time-name="72e6744d-8377-434d-b68f-087f69ba1262">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
   </ErrorConfiguration>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="6d067f2e-e902-4011-90c2-10ece80199ad">
+    <Attribute dwd:design-time-name="2edf7f22-a039-4d33-adee-e27fb8377151">
       <ID>Id</ID>
       <Name>Id</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="81311171-e5f7-4bf3-bb30-d4216bedf393">
+        <KeyColumn dwd:design-time-name="72e0dcfd-65f0-4330-ae52-e2ef4242719f">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="10c5b0b4-3524-4f82-b9ac-874ecad94055">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a200e367-08d5-4b12-b2aa-1428f437a3c2">
             <TableID>dbo_Esquela</TableID>
             <ColumnID>Id</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="862f640f-7606-448a-aaaa-cbdd8956a231">
+        <AttributeRelationship dwd:design-time-name="2ae6a78c-e96d-49d1-bc38-6f948c565037">
           <AttributeID>Id Tipo Esquela</AttributeID>
           <Name>Id Tipo Esquela</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="ad8d1509-7d61-47eb-b621-60988606a04f">
+        <AttributeRelationship dwd:design-time-name="be8a87ee-354e-4aa4-9a12-a60280b99c46">
+          <AttributeID>Id Departamento</AttributeID>
+          <Name>Id Departamento</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b7fd7353-0936-4148-abc7-5cef96355f5e">
           <AttributeID>Id Tiempo</AttributeID>
           <Name>Id Tiempo</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="3fd762ce-2319-4e9a-991a-e5846879c0c3">
+        <AttributeRelationship dwd:design-time-name="b6011a0e-d376-49fc-b5d9-1d978b25eaf6">
           <AttributeID>Id Estado</AttributeID>
           <Name>Id Estado</Name>
-        </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="20d3e367-d2c2-41f5-9d04-2ef9719e3884">
-          <AttributeID>Departamento</AttributeID>
-          <Name>Departamento</Name>
         </AttributeRelationship>
       </AttributeRelationships>
       <OrderBy>Key</OrderBy>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="e745a264-e8a2-43a2-84dd-466d7c542c57">
+    <Attribute dwd:design-time-name="a7d475e1-f064-42e4-9bae-8f3f6f87a43d">
       <ID>Id Tipo Esquela</ID>
       <Name>Id Tipo Esquela</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="395c3b11-4d5c-40f6-9a57-70f7446ca7de">
+        <KeyColumn dwd:design-time-name="46e63097-2a1d-450b-91a2-c339a46762f3">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="3ea88bff-6be9-4c5e-9db4-1dfff99407de">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="039ca715-33bd-4874-82bd-77db0eb4f531">
             <TableID>dbo_Esquela</TableID>
             <ColumnID>IdTipoEsquela</ColumnID>
           </Source>
@@ -104,13 +104,30 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="5394457a-9a0f-4fe7-9c03-709769184eb5">
+    <Attribute dwd:design-time-name="d1c855db-53d8-45a8-96b2-4b99e608c81a">
+      <ID>Id Departamento</ID>
+      <Name>Id Departamento</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="589b2af7-e3ba-435b-acab-bd639ecca5f5">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="542cd9c4-a40f-4c7e-ae0e-e5192a4a1758">
+            <TableID>dbo_Esquela</TableID>
+            <ColumnID>IdDepartamento</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="101653b5-4ef7-485b-ab37-3b2cb7c206dd">
       <ID>Id Tiempo</ID>
       <Name>Id Tiempo</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="77355dc1-8aba-4504-a831-5a6f9ec383cc">
+        <KeyColumn dwd:design-time-name="36fb863e-0f86-4307-b24d-8bb7d1c4db83">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="07e26701-d510-4b12-8f38-e432aa32d29a">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b6dc9e18-5fcc-4b2d-b010-235bd227efb1">
             <TableID>dbo_Esquela</TableID>
             <ColumnID>idTiempo</ColumnID>
           </Source>
@@ -121,33 +138,16 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="5e32c751-0b2d-451f-9979-8ec157bd8501">
+    <Attribute dwd:design-time-name="32d576af-9ce1-46da-8d7a-a58d132e3496">
       <ID>Id Estado</ID>
       <Name>Id Estado</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="8b3559f1-56bd-4272-96ea-b665a0bfa03a">
+        <KeyColumn dwd:design-time-name="47edff74-fe88-4386-9157-a89e0437cc4b">
           <DataType>WChar</DataType>
           <DataSize>25</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="2399cd77-551c-4124-ab0c-1f5004aab0c3">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e2c55421-8011-4f21-a1d7-b233930e209d">
             <TableID>dbo_Esquela</TableID>
             <ColumnID>IdEstado</ColumnID>
-          </Source>
-        </KeyColumn>
-      </KeyColumns>
-      <OrderBy>Key</OrderBy>
-      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
-      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-    </Attribute>
-    <Attribute dwd:design-time-name="958f70cf-3926-4c06-a7f4-19cf1b8b279d">
-      <ID>Departamento</ID>
-      <Name>Departamento</Name>
-      <KeyColumns>
-        <KeyColumn dwd:design-time-name="a88eb19d-f2e2-4a2a-8a97-6d4f818cac3c">
-          <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="a6c91648-1548-42ad-bba2-6cff144f43e3">
-            <TableID>dbo_Esquela</TableID>
-            <ColumnID>Departamento</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>

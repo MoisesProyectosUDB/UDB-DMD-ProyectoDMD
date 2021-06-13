@@ -11,8 +11,8 @@
   DTS:LocaleID="21514"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="55"
-  DTS:VersionGUID="{E19E17E1-D451-443D-B101-B76C3911CBDB}">
+  DTS:VersionBuild="56"
+  DTS:VersionGUID="{C7E3C194-F1A5-4664-BE9C-418908841EDC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1098,7 +1098,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{CFF9897E-95E2-4528-9911-0553FC9CC947}"
-          SQLTask:SqlStatementSource="insert into Esquela(Codigo,idTiempo,Descripcion,Departamento,Valor,Interes,IdTipoEsquela,IdEstado)&#xA;select a.Codigo, b.ID as'Tiempo',a.Descripcion,e.id,&#xA;a.Valor,a.Interes,c.ID,d.Codigo&#xA;from Esquela2 a inner join Tiempo b on REPLACE(a.fecha,'/','-') =b.fecha &#xA;&#x9;&#x9;&#x9;&#x9;inner join TipoFalta c on a.tipoFalta=c.Descripcion&#xA;&#x9;&#x9;&#x9;&#x9;inner join Estado d on a.EstadoDescripcion=d.Descripcion&#xA;&#x9;&#x9;&#x9;&#x9;inner join Departamento e on a.Departamento=e.Descripcion" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="insert into Esquela(Codigo,idTiempo,Descripcion,IdDepartamento,Valor,Interes,IdTipoEsquela,IdEstado)&#xA;select a.Codigo, b.ID as'Tiempo',a.Descripcion,e.id,&#xA;a.Valor,a.Interes,c.ID,d.Codigo&#xA;from Esquela2 a inner join Tiempo b on REPLACE(a.fecha,'/','-') =b.fecha &#xA;&#x9;&#x9;&#x9;&#x9;inner join TipoFalta c on a.tipoFalta=c.TipoFalta&#xA;&#x9;&#x9;&#x9;&#x9;inner join Estado d on a.EstadoDescripcion=d.Estado&#xA;&#x9;&#x9;&#x9;&#x9;inner join Departamento e on a.Departamento=e.Departamento" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1149,7 +1149,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{CFF9897E-95E2-4528-9911-0553FC9CC947}"
-          SQLTask:SqlStatementSource="insert into   Departamento(Descripcion)&#xA;select  distinct    Departamento from &#xA;Esquela2" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="insert into   Departamento(Departamento)&#xA;select  distinct    Departamento from &#xA;Esquela2" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1166,7 +1166,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{CFF9897E-95E2-4528-9911-0553FC9CC947}"
-          SQLTask:SqlStatementSource="insert into   Estado( Codigo, Descripcion)&#xA;select  distinct Estado, EstadoDescripcion from &#xA;Esquela2&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="insert into   Estado( Codigo, Estado)&#xA;select  distinct Estado, EstadoDescripcion from &#xA;Esquela2" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1200,7 +1200,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{CFF9897E-95E2-4528-9911-0553FC9CC947}"
-          SQLTask:SqlStatementSource="insert into TipoFalta  (Descripcion)&#xA;select  distinct tipoFalta from Esquela2" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="insert into TipoFalta  (TipoFalta)&#xA;select  distinct tipoFalta from Esquela2" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -1279,6 +1279,10 @@
           Id="Package\Cargar Datos Esquela"
           TopLeft="126,153" />
         <NodeLayout
+          Size="146,42"
+          Id="Package\Datos Esquela"
+          TopLeft="436,372" />
+        <NodeLayout
           Size="165,42"
           Id="Package\Descarte de Datos"
           TopLeft="342,82" />
@@ -1287,21 +1291,21 @@
           Id="Package\Limpiar Base"
           TopLeft="134,28" />
         <NodeLayout
+          Size="205,42"
+          Id="Package\Llenar tabla Departamento"
+          TopLeft="706,338" />
+        <NodeLayout
           Size="175,42"
           Id="Package\LLenar Tabla Estado"
           TopLeft="460,166" />
         <NodeLayout
           Size="172,42"
           Id="Package\Llenar tabla Tiempo"
-          TopLeft="909,162" />
+          TopLeft="735,255" />
         <NodeLayout
           Size="183,42"
           Id="Package\Llenar Tabla TipoFalta"
           TopLeft="666,169" />
-        <NodeLayout
-          Size="146,42"
-          Id="Package\Datos Esquela"
-          TopLeft="750,241" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
           TopLeft="450.666666666667,124">
@@ -1337,6 +1341,40 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="821,297">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-12.5,41"
+              Start="0,0"
+              End="-12.5,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.5"
+                    Point2="0,20.5"
+                    Point3="-4,20.5" />
+                  <mssgle:LineSegment
+                    End="-8.5,20.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8.5,20.5"
+                    Point2="-12.5,20.5"
+                    Point3="-12.5,24.5" />
+                  <mssgle:LineSegment
+                    End="-12.5,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 2]"
           TopLeft="635,188.5">
           <EdgeLayout.Curve>
@@ -1360,18 +1398,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 3]"
-          TopLeft="849,186.5">
+          TopLeft="757.5,211">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="60,0"
+              EndConnector="63.5,44"
               Start="0,0"
-              End="52.5,0">
+              End="63.5,36.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="52.5,0" />
+                    End="0,18" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18"
+                    Point2="0,22"
+                    Point3="4,22" />
+                  <mssgle:LineSegment
+                    End="59.5,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="59.5,22"
+                    Point2="63.5,22"
+                    Point3="63.5,26" />
+                  <mssgle:LineSegment
+                    End="63.5,36.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1448,58 +1498,32 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="205,42"
-          Id="Package\Llenar tabla Departamento"
-          TopLeft="1137,158" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Restricción 1]"
-          TopLeft="1081,181">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="56,0"
-              Start="0,0"
-              End="48.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="48.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 6]"
-          TopLeft="1239.5,200">
+          TopLeft="706,359">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-416.5,41"
+              EndConnector="-124,34"
               Start="0,0"
-              End="-416.5,33.5">
+              End="-116.5,34">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.5" />
+                    End="-58,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.5"
-                    Point2="0,20.5"
-                    Point3="-4,20.5" />
+                    Point1="-58,0"
+                    Point2="-62,0"
+                    Point3="-62,4" />
                   <mssgle:LineSegment
-                    End="-412.5,20.5" />
+                    End="-62,30" />
                   <mssgle:CubicBezierSegment
-                    Point1="-412.5,20.5"
-                    Point2="-416.5,20.5"
-                    Point3="-416.5,24.5" />
+                    Point1="-62,30"
+                    Point2="-62,34"
+                    Point3="-66,34" />
                   <mssgle:LineSegment
-                    End="-416.5,33.5" />
+                    End="-116.5,34" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1515,7 +1539,7 @@
     design-time-name="Package\Cargar Datos Esquela">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="98,42"
           Id="Package\Cargar Datos Esquela\Sort"
@@ -1563,9 +1587,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1599,9 +1621,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1635,9 +1655,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
