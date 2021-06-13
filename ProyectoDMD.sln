@@ -5,13 +5,6 @@ VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "ProyectoDMD", "ProyectoDMD\ProyectoDMD.dtproj", "{3A544361-268C-40C8-94D5-F9C09729FD26}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Archivos", "Archivos", "{BB27549D-A887-49B7-A2A8-DCAACD38F847}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\Consultas.sql = ..\..\Consultas.sql
-		..\..\CreacionDeTablas.sql = ..\..\CreacionDeTablas.sql
-		..\..\Esquelas_18102018.csv = ..\..\Esquelas_18102018.csv
-	EndProjectSection
-EndProject
 Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "CuboOLAP", "CuboOLAP\CuboOLAP.dwproj", "{528AF7B2-F776-476B-92DF-ECC75A4E42CE}"
 EndProject
 Global
